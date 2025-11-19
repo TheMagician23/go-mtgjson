@@ -6,12 +6,12 @@ import (
 )
 
 const (
-	path = "/SetList.json"
+	setListPath = "/SetList.json"
 )
 
 // GetSetList return all card sets as slice of Set
 func (c *Client) GetSetList() ([]Set, error) {
-	r, err := c.API.doRequest(path)
+	r, err := c.API.doRequest(setListPath)
 	if err != nil {
 		return nil, fmt.Errorf("c.api.doRequest: %s", err)
 	}

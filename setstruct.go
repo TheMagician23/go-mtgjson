@@ -12,7 +12,7 @@ type Set struct {
 	BaseSetSize        int               `json:"baseSetSize"`
 	Block              string            `json:"block,omitempty"`
 	Booster            []interface{}     `json:"booster"`
-	Cards              []Card            `json:"cards,omitempty"`
+	Cards              []CardSet         `json:"cards,omitempty"`
 	CardsphereSetId    int               `json:"cardsphereSetId,omitempty"`
 	Code               string            `json:"code"`
 	CodeV3             string            `json:"codeV3,omitempty"`
