@@ -1,5 +1,5 @@
-module github.com/kecbigmt/go-mtgjson
+module github.com/TheMagician23/go-mtgjson
 
-replace github.com/kecbigmt/go-mtgjson => ./
+replace github.com/TheMagician23/go-mtgjson => ./
 
 go 1.13
