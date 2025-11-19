@@ -1,5 +1,5 @@
 package mtgjson
 
 const (
-  host = "www.mtgjson.com/"
+	host = "www.mtgjson.com/api/v5/"
 )

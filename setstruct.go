@@ -1,37 +1,47 @@
 package mtgjson
 
-// Set has information about the card set
-// Based on MTGJSON v4.6.2
-type Set struct {
-  Code             string            `json:"code"`
-  Name             string            `json:"name"`
-  Type             string            `json:"type"`
-  ReleaseDate      string            `json:"releaseDate"`
-  TotalSetSize     int               `json:"totalSetSize"`
-  BaseSetSize      int               `json:"baseSetSize"`
-  Meta             SetMeta           `json:"meta"`
-  Cards            []Card            `json:"cards,omitempty"`
-  Tokens           []Token           `json:"tokens,omitempty"`
-  ParentCode       string            `json:"parentCode,omitempty"`
-  IsFoilOnly       bool              `json:"isFoilOnly,omitempty"`
-  Block            string            `json:"block,omitempty"`
-  BoosterV3        []interface{}     `json:"boosterV3"`
-  CodeV3           string            `json:"codeV3,omitempty"`
-  IsOnlineOnly     bool              `json:"isOnlineOnly,omitempty"`
-  IsPaperOnly      bool              `json:"isPaperOnly,omitempty"`
-  IsForeignOnly    bool              `json:"isForeignOnly,omitempty"`
-  IsPartialPreview bool              `json:"isPartialPreview,omitempty"`
-  KeyruneCode      string            `json:"keyruneCode,omitempty"`
-  MCMName          string            `json:"mcmName,omitempty"`
-  MCMID            int               `json:"mcmId,omitempty"`
-  MTGOCode         string            `json:"mtgoCode,omitempty"`
-  TCGPlayerGroupID int               `json:"tcgplayerGroupId,omitempty"`
-  Translations     map[string]string `json:"translations,omitempty"`
+// Based on MTGJSON v5.5.2+20251117
+
+type SetListMeta struct {
+	Date    string `json:"date"`
+	Version string `json:"version"`
 }
 
-// SetMeta has mtgjson meta data
-type SetMeta struct {
-  Date string `json:"date"`
-  PricesDate string `json:"pricesDate"`
-  Version string `json:"version"`
+// Set has information about the card set
+type Set struct {
+	BaseSetSize        int               `json:"baseSetSize"`
+	Block              string            `json:"block,omitempty"`
+	Booster            []interface{}     `json:"booster"`
+	Cards              []Card            `json:"cards,omitempty"`
+	CardsphereSetId    int               `json:"cardsphereSetId,omitempty"`
+	Code               string            `json:"code"`
+	CodeV3             string            `json:"codeV3,omitempty"`
+	Decks              []Deck            `json:"decks"`
+	IsForeignOnly      bool              `json:"isForeignOnly,omitempty"`
+	IsFoilOnly         bool              `json:"isFoilOnly,omitempty"`
+	IsNonFoilOnly      bool              `json:"isNonFoilOnly,omitempty"`
+	IsOnlineOnly       bool              `json:"isOnlineOnly,omitempty"`
+	IsPaperOnly        bool              `json:"isPaperOnly,omitempty"`
+	IsPartialPreview   bool              `json:"isPartialPreview,omitempty"`
+	KeyruneCode        string            `json:"keyruneCode,omitempty"`
+	Languages          []string          `json:"languages"`
+	CardmarketId       int               `json:"mcmId,omitempty"`
+	CardmarketIdExtras int               `json:"mcmIdExtras,omitempty"`
+	CardmarketName     string            `json:"mcmName,omitempty"`
+	MTGOCode           string            `json:"mtgoCode,omitempty"`
+	Name               string            `json:"name"`
+	ParentCode         string            `json:"parentCode,omitempty"`
+	ReleaseDate        string            `json:"releaseDate"`
+	SealedProduct      []SealedProduct   `json:"sealedProduct,omitempty"`
+	TCGPlayerGroupID   int               `json:"tcgplayerGroupId,omitempty"`
+	Tokens             []Token           `json:"tokens,omitempty"`
+	TokenSetCode       string            `json:"tokenSetCode,omitempty"`
+	TotalSetSize       int               `json:"totalSetSize"`
+	Translations       map[string]string `json:"translations,omitempty"`
+	Type               string            `json:"type"`
+}
+
+type SetList struct {
+	Meta SetListMeta `json:"meta"`
+	Sets []Set       `json:"data"`
 }
