@@ -1,4 +1,4 @@
-package mtgjson
+package datamodels
 
 type CardSetDeck struct {
 	Count  int    `json:"count"`

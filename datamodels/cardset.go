@@ -1,66 +1,6 @@
-package mtgjson
+package datamodels
 
-type ForeignData struct {
-	FaceName    string      `json:"faceName,omitempty"`
-	FlavorText  string      `json:"flavorText,omitempty"`
-	Identifiers Identifiers `json:"identifiers"`
-	Language    string      `json:"language"`
-	Name        string      `json:"name"`
-	Text        string      `json:"text,omitempty"`
-	Type        string      `json:"type,omitempty"`
-	Uuid        string      `json:"uuid"`
-}
-
-type LeadershipSkills struct {
-	Brawl       bool `json:"brawl"`
-	Commander   bool `json:"commander"`
-	Oathbreaker bool `json:"oathbreaker"`
-}
-
-type Legalities struct {
-	Alchemy         string `json:"alchemy,omitempty"`
-	Brawl           string `json:"brawl,omitempty"`
-	Commander       string `json:"commander,omitempty"`
-	Duel            string `json:"duel,omitempty"`
-	Explorer        string `json:"explorer,omitempty"`
-	Future          string `json:"future,omitempty"`
-	Gladiator       string `json:"gladiator,omitempty"`
-	Historic        string `json:"historic,omitempty"`
-	HistoricBrawl   string `json:"historicbrawl,omitempty"`
-	Legacy          string `json:"legacy,omitempty"`
-	Modern          string `json:"modern,omitempty"`
-	Oathbreaker     string `json:"oathbreaker,omitempty"`
-	Oldschool       string `json:"oldschool,omitempty"`
-	Pauper          string `json:"pauper,omitempty"`
-	PauperCommander string `json:"paupercommander,omitempty"`
-	Penny           string `json:"penny,omitempty"`
-	Pioneer         string `json:"pioneer,omitempty"`
-	Predh           string `json:"predh,omitempty"`
-	Premodern       string `json:"premodern,omitempty"`
-	Standard        string `json:"standard,omitempty"`
-	StandardBrawl   string `json:"standardbrawl,omitempty"`
-	Timeless        string `json:"timeless,omitempty"`
-	Vintage         string `json:"vintage,omitempty"`
-}
-
-type RelatedCards struct {
-	ReverseRelated []string `json:"reverseRelated,omitempty"`
-	Spellbook      []string `json:"spellbook,omitempty"`
-}
-
-type Rulings struct {
-	Date string `json:"date"`
-	Text string `json:"text"`
-}
-
-type SourceProducts struct {
-	Etched  []string `json:"etched,omitempty"`
-	Foil    []string `json:"foil,omitempty"`
-	NonFoil []string `json:"nonfoil,omitempty"`
-}
-
-// Card has information of single card
-// Based on MTGJSON v5.5.2+20251117
+// CardSet has information of single card in a Set
 type CardSet struct {
 	Artist                  string           `json:"artist"`
 	ArtistIds               []string         `json:"artistIds,omitempty"`

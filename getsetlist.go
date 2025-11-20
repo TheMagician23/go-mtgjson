@@ -1,5 +1,6 @@
 package mtgjson
 
+/*
 import (
 	"encoding/json"
 	"fmt"
@@ -22,3 +23,4 @@ func (c *Client) GetSetList() ([]Set, error) {
 	}
 	return parsedSetList.Sets, nil
 }
+*/

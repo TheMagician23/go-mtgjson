@@ -1,12 +1,6 @@
-package mtgjson
+package datamodels
 
 // Based on MTGJSON v5.5.2+20251117
-
-type SetListMeta struct {
-	Date    string `json:"date"`
-	Version string `json:"version"`
-}
-
 // Set has information about the card set
 type Set struct {
 	BaseSetSize        int               `json:"baseSetSize"`
@@ -34,14 +28,9 @@ type Set struct {
 	ReleaseDate        string            `json:"releaseDate"`
 	SealedProduct      []SealedProduct   `json:"sealedProduct,omitempty"`
 	TCGPlayerGroupID   int               `json:"tcgplayerGroupId,omitempty"`
-	Tokens             []Token           `json:"tokens,omitempty"`
+	Tokens             []CardToken       `json:"tokens,omitempty"`
 	TokenSetCode       string            `json:"tokenSetCode,omitempty"`
 	TotalSetSize       int               `json:"totalSetSize"`
 	Translations       map[string]string `json:"translations,omitempty"`
 	Type               string            `json:"type"`
-}
-
-type SetList struct {
-	Meta SetListMeta    `json:"meta"`
-	Sets map[string]Set `json:"data"`
 }
