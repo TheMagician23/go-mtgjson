@@ -17,7 +17,7 @@ type CardSet struct {
 	Defense                 string           `json:"defense,omitempty"`
 	DuelDeck                string           `json:"duelDeck,omitempty"`
 	EdhrecRank              int              `json:"edhrecRank"`
-	EdhrecSaltiness         int              `json:"edhrecSaltiness,omitempty"`
+	EdhrecSaltiness         float32          `json:"edhrecSaltiness,omitempty"`
 	FaceConvertedManaCost   float32          `json:"faceConvertedManaCost,omitempty"` // Deprecated; use `faceManaValue` instead
 	FaceFlavorName          string           `json:"faceFlavorName,omitempty"`
 	FaceManaValue           float32          `json:"faceManaValue,omitempty"`
