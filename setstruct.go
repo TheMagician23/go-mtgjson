@@ -42,6 +42,6 @@ type Set struct {
 }
 
 type SetList struct {
-	Meta SetListMeta `json:"meta"`
-	Sets []Set       `json:"data"`
+	Meta SetListMeta    `json:"meta"`
+	Sets map[string]Set `json:"data"`
 }
