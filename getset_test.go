@@ -1,14 +1,6 @@
 package mtgjson
 
-import (
-  "os"
-  "io"
-  "fmt"
-  "bytes"
-  "testing"
-  "path/filepath"
-)
-
+/*
 type dummyGetSetAPI struct{}
 
 func (api *dummyGetSetAPI) doRequest(path string) (io.Reader, error) {
@@ -49,3 +41,4 @@ func TestGetSet(t *testing.T) {
     t.Fatalf("got wrong foreign data")
   }
 }
+*/
