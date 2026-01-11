@@ -26,7 +26,7 @@ func (c *Client) GetMeta() (Meta, error) {
 
 	err = json.NewDecoder(r).Decode(&meta)
 	if err != nil {
-		return allPrintings, fmt.Errorf("json.NewDecoder(r).Decode: %s", err)
+		return meta, fmt.Errorf("json.NewDecoder(r).Decode: %s", err)
 	}
 
 	return meta, nil
